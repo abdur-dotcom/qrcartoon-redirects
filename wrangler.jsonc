@@ -1,0 +1,17 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "qrcartoon-redirects",
+	"main": "src/index.js",
+	"compatibility_date": "2026-10-01",
+	"workers_dev": true,
+
+	// Your redirect list lives here. Deploy to Cloudflare creates it for you.
+	"kv_namespaces": [{ "binding": "QR","id": "e40f6edb3a714f30ae46baa581d0af7b" }],
+
+	"vars": {
+		// REQUIRED. Domains your QR codes may send people to, comma separated.
+		// "brand.com" also allows its subdomains (shop.brand.com).
+		// Redirects anywhere else are refused, even if QRCartoon asks for them.
+		"ALLOWED_HOSTS": "google.com"
+	}
+}
